@@ -100,7 +100,9 @@ class NavigationRouter extends Component {
         backAndroidHandler={this.onBackPress}
         wrapBy={observer}>
         <Lightbox key="lightBox">
-          <Stack key="InitialStack">{scenes}</Stack>
+          <Stack key="InitialStack" hideNavBar>
+            {scenes}
+          </Stack>
         </Lightbox>
       </Router>
     );
