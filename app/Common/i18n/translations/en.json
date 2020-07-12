@@ -1,3 +1,27 @@
 {
-  "stepOne": "Step one"
+  "stepOne": "Step one",
+  "SignUpForm": {
+    "signUp": "Sign Up",
+    "titleTag": "Please fill in this form to create an account",
+    "firstName": "First Name",
+    "lastName": "LastName",
+    "mobileNumber": "MobileNumber",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "selectYourGender": "Select Your gender",
+    "male": "Male",
+    "female": "Female",
+    "others": "Others",
+    "selectYourBranch": "Select your branch",
+    "cse": "CSE",
+    "ece": "ECE",
+    "dob": "DOB",
+    "enterYourAddress": "Enter your address",
+    "typeYourAddressHere": "Type your address here...",
+    "selectYourTypingSpeed": "Select your typing speed",
+    "iAcceptThe": "I accept the",
+    "termsOfUse": "terms of Use",
+    "privacyPolicy": "Privacy Policy"
+  }
 }

@@ -1,22 +1,47 @@
 import * as React from 'react';
-import { View } from 'react-native';
-import { RadioButton as ReactNativeRadioButton, Text } from 'react-native-paper';
+import {View, StyleSheet, Text} from 'react-native';
+import RadioForm, {
+  RadioButton,
+  RadioButtonInput,
+  RadioButtonLabel,
+} from 'react-native-simple-radio-button';
 
-const RadioButtons = () => {
-  const [value, setValue] = React.useState('first');
-
+const RadioButtons = (props: any) => {
   return (
-    <ReactNativeRadioButton.Group onValueChange={value => setValue(value)} value={value}>
-      <View>
-        <Text>First</Text>
-        <ReactNativeRadioButton value="first" />
-      </View>
-      <View>
-        <Text>Second</Text>
-        <ReactNativeRadioButton value="second" />
-      </View>
-    </ReactNativeRadioButton.Group>
+    <View style={styles.buttonContainer}>
+      <Text style={styles.lable}>{props.lable}</Text>
+      <RadioForm
+        radio_props={props.radioProps}
+        initial={0}
+        wrapStyle={styles.buttonStyle}
+        buttonColor={'grey'}
+        selectedButtonColor={'black'}
+        onPress={props.onValueChange}
+        buttonWrapStyle={{marginLeft: 10}}
+        animation={true}
+        buttonSize={10}
+        buttonOuterSize={20}
+        labelStyle={styles.buttonLable}
+        formHorizontal={true}
+      />
+    </View>
   );
 };
-
 export {RadioButtons};
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  lable: {
+    marginRight: 20,
+  },
+  buttonLable: {
+    fontSize: 12,
+    marginRight: 18,
+  },
+  buttonStyle: {},
+});

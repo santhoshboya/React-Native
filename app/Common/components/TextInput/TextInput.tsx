@@ -5,7 +5,6 @@ const TextInput = (props: any) => {
   const onChangeTextInput = (text: string) => {
     props.onChangeText(text);
   };
-  console.log(props);
 
   return (
     <>
@@ -13,6 +12,7 @@ const TextInput = (props: any) => {
         value={props.inputValue}
         onChangeText={text => onChangeTextInput(text)}
         style={props.inputStyles}
+        placeholder={props.placeHolder}
       />
     </>
   );

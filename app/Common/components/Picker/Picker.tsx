@@ -1,28 +1,51 @@
-import React, { useState } from "react";
-import { View, Picker as ReactNativePicker, StyleSheet } from "react-native";
+import React, {useState} from 'react';
+import {
+  View,
+  Picker as ReactNativePicker,
+  StyleSheet,
+  Text,
+} from 'react-native';
 
-const Picker = () => {
-  const [selectedValue, setSelectedValue] = useState("java");
+const Picker = (props: any) => {
+  const getItems = (itemsList: any) => {
+    return itemsList.map((item: any) => (
+      <ReactNativePicker.Item
+        label={item.label}
+        key={item.label}
+        value={item.value}
+      />
+    ));
+  };
   return (
     <View style={styles.container}>
+      <Text style={styles.lable}>{props.lable}</Text>
       <ReactNativePicker
-        selectedValue={selectedValue}
-        style={{ height: 50, width: 150 }}
-        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
-      >
-        <ReactNativePicker.Item label="Java" value="java" />
-        <ReactNativePicker.Item label="JavaScript" value="js" />
+        selectedValue={props.selectedValue}
+        style={styles.pickerStyle}
+        onValueChange={props.onValueChange}>
+        {getItems(props.optionsList)}
       </ReactNativePicker>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingTop: 40,
-    alignItems: "center"
-  }
+    display: 'flex',
+    flexDirection: 'row',
+    marginTop: 10,
+    alignItems: 'center',
+  },
+  lable: {
+    marginRight: 30,
+  },
+  pickerStyle: {
+    height: 50,
+    width: 150,
+    borderColor: 'grey',
+    borderRadius: 5,
+    borderWidth: 1,
+  },
 });
 
-export  {Picker};
+export {Picker};
